@@ -1,0 +1,536 @@
+1.index
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Клининг «Мой Не Сам»</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <a href="login.html" class="nav-link">Войти</a>
+            <a href="register.html" class="nav-link nav-primary">Зарегистрироваться</a>
+        </nav>
+    </header>
+    <main class="hero">
+        <h1>Клининговые услуги для дома и офиса</h1>
+        <p>Зарегистрируйтесь и оформляйте заявки на уборку в личном кабинете.</p>
+        <div class="hero-actions">
+            <a href="register.html" class="btn">Зарегистрироваться</a>
+            <a href="login.html" class="btn btn-secondary">Войти</a>
+        </div>
+    </main>
+</body>
+</html>
+1.
+2.login
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход — Мой Не Сам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <a href="login.html" class="nav-link">Войти</a>
+            <a href="register.html" class="nav-link nav-primary">Зарегистрироваться</a>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <section class="card">
+            <h2>Вход</h2>
+            <input type="text" id="lLogin" placeholder="Логин">
+            <input type="password" id="lPass" placeholder="Пароль">
+            <button type="button" onclick="log()">Войти</button>
+            <p id="lMsg" class="msg"></p>
+            <p class="hint">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+2.
+3.register
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация — Мой Не Сам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <a href="login.html" class="nav-link">Войти</a>
+            <a href="register.html" class="nav-link nav-primary">Зарегистрироваться</a>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <section class="card">
+            <h2>Регистрация</h2>
+            <input type="text" id="rLogin" placeholder="Логин">
+            <input type="password" id="rPass" placeholder="Пароль">
+            <input type="text" id="rFio" placeholder="ФИО">
+            <input type="tel" id="rPhone" placeholder="Телефон">
+            <input type="email" id="rEmail" placeholder="Email">
+            <button type="button" onclick="reg()">Зарегистрироваться</button>
+            <p id="rMsg" class="msg"></p>
+            <p class="hint">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+3.
+4.cabinet
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет — Мой Не Сам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <a href="new-order.html" class="nav-link">Новая заявка</a>
+            <button type="button" class="nav-link nav-out" onclick="out()">Выйти</button>
+        </nav>
+    </header>
+
+    <div class="wrap wrap-wide">
+        <section class="card">
+            <h2>Ваши данные</h2>
+            <div id="info" class="cabinet-user"></div>
+        </section>
+
+        <section class="card">
+            <h2>История заявок</h2>
+            <div class="orders-list">
+                <article class="order-item">
+                    <p class="order-date">25.05.2026 14:00</p>
+                    <p>Адрес: ул. Примерная, 10</p>
+                    <p>Услуга: Генеральная уборка</p>
+                    <p>Оплата: Банковская карта</p>
+                    <span class="status status-new">новая</span>
+                </article>
+                <p class="orders-empty">У вас пока нет других заявок</p>
+            </div>
+            <a href="new-order.html" class="btn">Создать новую заявку</a>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+4.
+5.new-order
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новая заявка — Мой Не Сам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <a href="cabinet.html" class="nav-link">Кабинет</a>
+            <button type="button" class="nav-link nav-out" onclick="out()">Выйти</button>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <section class="card">
+            <h2>Новая заявка</h2>
+            <input type="text" placeholder="Адрес">
+            <input type="text" placeholder="Контактные данные">
+            <input type="date">
+            <input type="time">
+            <select>
+                <option value="">Тип услуги</option>
+                <option>Общий клининг</option>
+                <option>Генеральная уборка</option>
+                <option>Послестроительная уборка</option>
+                <option>Химчистка ковров и мебели</option>
+            </select>
+            <select>
+                <option value="">Способ оплаты</option>
+                <option>Наличными</option>
+                <option>Банковская карта</option>
+            </select>
+            <button type="button" class="btn">Отправить заявку</button>
+        </section>
+        <a href="cabinet.html" class="btn btn-out">Назад в кабинет</a>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+5.
+6.admin
+<!DOCTYPE html>
+<!-- Панель администратора: все заявки (пока статичный макет) -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Панель администратора — Мой Не Сам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar topbar-admin">
+        <a href="index.html" class="logo">Мой <span>Не Сам</span></a>
+        <nav class="topbar-nav">
+            <span class="nav-label">Администратор</span>
+            <!-- out(1) — выход админа (удаляет isAdmin из localStorage) -->
+            <button type="button" class="nav-link nav-out" onclick="out(1)">Выйти</button>
+        </nav>
+    </header>
+
+    <div class="wrap wrap-wide">
+        <section class="card card-admin">
+            <h2>Все заявки</h2>
+
+            <!-- Пример заявки 1 -->
+            <article class="order-item order-admin">
+                <p><strong>Клиент:</strong> Иванов Иван Иванович</p>
+                <p><strong>Телефон:</strong> +7 900 000-00-01</p>
+                <p><strong>Email:</strong> ivan@mail.ru</p>
+                <p><strong>Дата:</strong> 25.05.2026 14:00</p>
+                <p><strong>Адрес:</strong> ул. Примерная, 10</p>
+                <p><strong>Услуга:</strong> Генеральная уборка</p>
+                <p><strong>Оплата:</strong> Банковская карта</p>
+                <label class="status-row">
+                    <strong>Статус:</strong>
+                    <select class="status-select">
+                        <option selected>новая</option>
+                        <option>выполнена</option>
+                        <option>отменена</option>
+                    </select>
+                </label>
+            </article>
+
+            <!-- Пример заявки 2 -->
+            <article class="order-item order-admin">
+                <p><strong>Клиент:</strong> Петрова Анна Сергеевна</p>
+                <p><strong>Телефон:</strong> +7 900 000-00-02</p>
+                <p><strong>Email:</strong> anna@mail.ru</p>
+                <p><strong>Дата:</strong> 26.05.2026 10:30</p>
+                <p><strong>Адрес:</strong> пр. Центральный, 5</p>
+                <p><strong>Услуга:</strong> Общий клининг</p>
+                <p><strong>Оплата:</strong> Наличными</p>
+                <label class="status-row">
+                    <strong>Статус:</strong>
+                    <select class="status-select">
+                        <option>новая</option>
+                        <option selected>выполнена</option>
+                        <option>отменена</option>
+                    </select>
+                </label>
+            </article>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+6.
+7.app.js
+const p = location.pathname;
+function say(el, t, ok) {
+    el.textContent = t;
+    el.className = 'msg ' + (ok ? 'ok' : 'err');
+}
+async function reg() {
+    if (!rFio.value || !rPhone.value || !rEmail.value || !rLogin.value || !rPass.value)
+        return say(rMsg, 'Заполните все поля', 0);
+
+    const d = await (await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login: rLogin.value, pass: rPass.value, fio: rFio.value, phone: rPhone.value, email: rEmail.value })
+    })).json();
+    say(rMsg, d.ok ? 'Регистрация успешна' : d.err, d.ok);
+}
+
+async function log() {
+    if (!lLogin.value || !lPass.value) return say(lMsg, 'Введите логин и пароль', 0);
+
+    if (lLogin.value === 'adminka' && lPass.value === '123')
+        return localStorage.isAdmin = '1', location = 'admin.html';
+
+    const d = await (await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ login: lLogin.value, pass: lPass.value })
+    })).json();
+
+    if (d.ok) {
+        localStorage.user = JSON.stringify(d.user);
+        delete localStorage.isAdmin;
+        location = 'cabinet.html';
+    } else say(lMsg, 'Неверный логин или пароль', 0);
+}
+
+if (p.includes('cabinet')) {
+    const u = JSON.parse(localStorage.user || 'null');
+    if (!u) location = 'login.html';
+    else info.innerHTML = '<p><strong>ФИО:</strong> ' + u.fio + '</p><p><strong>Телефон:</strong> ' + (u.phone || '—') + '</p><p><strong>Email:</strong> ' + (u.email || '—') + '</p><p><strong>Логин:</strong> ' + u.login + '</p>';
+}
+
+if (p.includes('admin') && localStorage.isAdmin !== '1') location = 'login.html';
+
+function out(a) {
+    localStorage.removeItem(a ? 'isAdmin' : 'user');
+    location = 'index.html';
+}
+7.
+8.server.js
+const express = require('express');      
+const { Pool } = require('pg');          
+const app = express();
+
+const db = new Pool({ host: 'localhost', user: 'postgres', password: '123', database: 'demo' });
+
+app.use(express.json());                  
+app.use(express.static('.'));            
+
+
+db.query('CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, login TEXT UNIQUE, pass TEXT, fio TEXT, phone TEXT, email TEXT)');
+db.query('ALTER TABLE users ADD COLUMN IF NOT EXISTS phone TEXT'); 
+db.query('ALTER TABLE users ADD COLUMN IF NOT EXISTS email TEXT');
+
+
+app.post('/register', async (req, res) => {
+    const { login, pass, fio, phone, email } = req.body;  
+    try {
+        await db.query('INSERT INTO users(login,pass,fio,phone,email) VALUES($1,$2,$3,$4,$5)', [login, pass, fio, phone, email]);
+        res.json({ ok: 1 });  
+    } catch (e) {
+        res.json({ ok: 0, err: 'логин занят' });  
+    }
+});
+
+app.post('/login', async (req, res) => {
+    const { login, pass } = req.body;
+    const r = await db.query('SELECT id,login,fio,phone,email FROM users WHERE login=$1 AND pass=$2', [login, pass]);
+    res.json(r.rows[0] ? { ok: 1, user: r.rows[0] } : { ok: 0 });
+});
+
+app.listen(3000, () => console.log('http://localhost:3000'));
+8.
+10.init.sql
+CREATE DATABASE demo;
+\c demo
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,  
+    login TEXT UNIQUE,       
+    pass TEXT,               
+    fio TEXT,               
+    phone TEXT,            
+    email TEXT               
+);
+10.
+11.style.css
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f0f4f8;
+    min-height: 100vh;
+    color: #1a3a4a;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: #fff;
+    border-bottom: 1px solid #d0e8f0;
+    box-shadow: 0 2px 8px rgba(13, 110, 138, 0.08);
+}
+
+.topbar-admin { border-bottom-color: #e8d4a8; }
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0d6e8a;
+    text-decoration: none;
+}
+
+.logo span { color: #2db87a; }
+
+.topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0d6e8a;
+    background: transparent;
+    border: 1px solid #b8d4e3;
+    cursor: pointer;
+}
+
+.nav-primary { background: #0d6e8a; color: #fff; border-color: #0d6e8a; }
+.nav-out { color: #5a6a7a; border-color: #c5d0d8; }
+.nav-label { font-size: 0.9rem; color: #8a6d0d; font-weight: 600; }
+
+.hero {
+    max-width: 520px;
+    margin: 60px auto;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.hero h1 { font-size: 1.5rem; color: #0d6e8a; margin-bottom: 12px; }
+.hero p { color: #5a7a8a; margin-bottom: 28px; line-height: 1.5; }
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-actions .btn { width: auto; min-width: 160px; }
+
+.wrap {
+    max-width: 440px;
+    margin: 32px auto;
+    padding: 0 16px 40px;
+}
+
+.wrap-wide { max-width: 560px; }
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(13, 110, 138, 0.1);
+    border: 1px solid #d0e8f0;
+}
+
+.card-admin { border-color: #e8d4a8; }
+
+.card h2 {
+    font-size: 1.1rem;
+    color: #0d6e8a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #2db87a;
+}
+
+.card-admin h2 { color: #8a6d0d; border-bottom-color: #d4a82a; }
+
+input, select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 1px solid #b8d4e3;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0d6e8a;
+}
+
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    background: #0d6e8a;
+    color: #fff;
+}
+
+.btn-secondary { background: #fff; color: #0d6e8a; border: 1px solid #0d6e8a; }
+.btn-out { background: #6b8a9a; }
+
+.hint { margin-top: 14px; font-size: 0.9rem; color: #5a7a8a; text-align: center; }
+.hint a { color: #0d6e8a; }
+
+.msg { margin-top: 10px; font-size: 0.9rem; min-height: 1.2em; }
+.msg.ok { color: #1a7a4a; }
+.msg.err { color: #c0392b; }
+
+.cabinet-user { line-height: 1.8; }
+.cabinet-user strong { color: #0d6e8a; }
+
+.orders-list { margin-bottom: 14px; }
+
+.order-item {
+    padding: 14px;
+    margin-bottom: 12px;
+    background: #f5fafc;
+    border-radius: 8px;
+    border-left: 4px solid #0d6e8a;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.order-admin { border-left-color: #b8860b; background: #fffef8; }
+
+.order-date { font-weight: 600; color: #0d6e8a; }
+
+.status {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-new { background: #fff3cd; color: #856404; }
+.status-done { background: #d4edda; color: #155724; }
+.status-cancel { background: #f8d7da; color: #721c24; }
+
+.orders-empty { text-align: center; color: #888; font-size: 0.9rem; margin: 8px 0; }
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.status-select { width: auto; min-width: 140px; margin-bottom: 0; flex: 1; }
+11.
+
+GIT 
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/mQ457/express.git
+git push -u origin main
